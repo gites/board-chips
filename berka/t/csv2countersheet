@@ -1,0 +1,239 @@
+#!/usr/bin/perl
+# For taking a comma- or tab-delimited file and making a printable counter sheet
+# out of the files listed in it.
+# Run "$0 --help" to see the help.
+# ACHTUNG: help text is out of date!
+#
+# Released into the Public Domain by stephan beal.
+#
+# It relies on a version of ImageMagick's 'convert' util with a working +append feature
+# (this varies from version to version). 5.5.3 is known to work, 5.4.2 is known not to.
+# It supports limited macro expansion - see below.
+#
+# This is not a well-written tool. It should be replaced by something nicer, but i'm too lazy.
+#
+# Input lines starting with ; or # are treated as comments unless they are in this format:
+#
+#   # KEY=VALUE
+#
+# in which case it is interpretted as a macro, which can be expanded later in other macros or in
+# filename references.
+# Macros may refer to other macros only if the referred-to macros come before the referring macro.
+#
+# Sample input:
+#-------------------
+## PRE=48x48/
+## POST=.png
+## PLUS={PRE}plus{POST}
+## MINUS={PRE}minus{POST}
+#
+#{PLUS},{PLUS},{PLUS},{PLUS}
+#{MINUS},{MINUS},{MINUS},{MINUS}
+# 
+#{PLUS},{PLUS},{PLUS},{PLUS}
+#{MINUS},{MINUS},{MINUS},{MINUS}
+#path/to/some/image.png,some/other/image.png,foo.png,bar.png
+#-------------------
+
+use Getopt::Std;
+$showhelp = 0;
+if( @ARGV[0] =~ /(help|\?)/ && (!-f $ARGV[0]) ) {
+    $showhelp = 1;
+}
+getopts( 'dql:b:c:m:f:o:e:sv' );
+
+
+$INFILE = $opt_f;
+if( ! $INFILE ) {
+    foreach $a (@ARGV) {
+        if( -f $a ) { $INFILE = $a; break; }
+    }
+}
+$bl = `ls -1 *blank*.png 2>/dev/null`;
+$bl =~ s/\s.*//;
+if( $bl =~ /^\S+$/ ) {
+    #print STDERR "GUESSING blank counter: $bl\n";
+}
+$BLANK = $opt_l || $bl; # "48x48_blank.png";
+$BORDER = $opt_b || 0; #size of border
+$BORDER_COLOR = $opt_c || "black";
+$convert = $opt_m || `which convert`; # "m" is for Magick
+chomp $convert;
+$IMG_EXTENSION = $opt_e || ".png";
+$VERBOSE = $opt_v || 0;
+$QUIET = $opt_q || 0;
+$QUIET = 0 if $VERBOSE;
+
+if( ! -f $convert ) {
+    die "The convert utility [$convert] was not found!";
+}
+
+$0 =~ m|([^/]+)$|;
+$basename = $1 || "stdin";
+$tmpdir = $basename.".tmp.$$";
+
+if( $showhelp  ) {
+    print <<EOF;
+Usage: $0 [options] -f input_file
+ or    $0 [options] -s < stdin
+options must come before the filename!
+
+Options:
+ -b = border size [$BORDER]
+ -c = border color [$BORDER_COLOR]
+ -d = do NOT delete 'bordered' dir when done.
+ -e = output extension for countersheet, including preceeding dot (e.g. ".png" or "_foo.png"). [$IMG_EXTENSION]
+      -e has no effect if -o is used.
+ -f = input file (defaults to ARGV[0])
+ -l = blank image name [$BLANK] (used for padding short rows)
+ -m = path to ImageMagick 'convert' [$convert]
+ -o = output file. Defaults to name of input file (or stdin) plus '$IMG_EXTENSION'.
+ -q = quiet. Supress all non-error output.
+ -s = read from stdin
+ -v = verbose
+ -?, --help, -help = show usage text (what you are reading now).
+
+EOF
+  exit;
+}
+
+
+`mkdir -p $tmpdir`;
+die "Could not make temp dir $tmpdir!\n" unless -d $tmpdir;
+$tmpdir .= "/";
+
+# this thing is different in different revs of 'convert' :/
+$append_l2r = "+append";
+$append_t2b = "-append";
+
+
+if( ! $INFILE ) {
+    @LINES = <STDIN>;
+    $INFILE = "stdin.$$";
+}
+else {
+    print "Making countersheet from file [$INFILE].\n" if $opt_v;
+}
+
+$SHEET= $opt_o || $INFILE.$IMG_EXTENSION;
+
+$borderdir = "bordered";
+if( ! -d $borderdir ) {
+  mkdir( $borderdir, 0755 ) or die( "Cannot create $borderdir.\n" );
+}
+
+$EXTO = ".png"; # format for each row. this is important because different versions
+# of convert, at different times of the day, at different temperatures, will do
+# different funkiness with various output formats.
+
+if( ! @LINES ) {
+    open( INFILE, "<$INFILE" ) or die "Cannot open input file [$INFILE]!\n";
+    @LINES = <INFILE>;
+    close INFILE;
+}
+
+@INLIST;
+$COLS = 0;
+$ROWS = 0;
+
+%macros = {};
+foreach $l ( @LINES ) {
+    next unless ($l =~ /\w/ );
+    if( $l =~ /^[\#;]/ ) {
+        next unless $l =~ /(\w+)\s*=\s*(.*)\s*/;
+        $key = $1;
+        $val = $2;
+        foreach $k ( keys(%macros) ) {
+            $val =~ s/\{$k\}/$macros{$k}/ge;
+        }
+        print "$0: adding macro [$key] => [$val]\n" if $VERBOSE;
+        $macros{$key} = $val;
+        next;
+    }
+  chomp $l;
+  $l =~ s/,/\t/g;
+  while ( $l =~ /([\t][\t])/ ) {
+    $dt=$1;
+    $l =~ s/$dt/\t$BLANK\t/;
+  }
+  $l =~ s/BLANK/$BLANK/ig;
+  $l =~ s/\"//g; $l =~ s/\'//g; $l =~ s/ //g; # clean up output from spreadsheet editors
+  $l =~ s/\t$/\t$BLANK/; $l =~ s/^\t/$BLANK\t/;
+
+    foreach $k ( keys(%macros) ) {
+        $l =~ s/\{$k\}/$macros{$k}/ge;
+        print STDERR "2nd Expanding macro $k => ".$macros{$k}."\n" if $VERBOSE;
+    }
+
+  @P = split(/[\t]/,$l);
+#    print STDERR "\nP == ".@P."\n";
+  if ( $COLS < @P ) { $COLS = @P; }
+  $r = "";
+  $width = 0;
+
+  $rowdir = "$borderdir/$ROWS";
+  if( ! -d $rowdir ) {
+    mkdir( $rowdir, 0755 ) or die( "Cannot create $rowdir.\n" );
+  }
+  $col = 0;
+  foreach $p (@P ) {
+    if ( ! -f $p ) { 
+      print "FAILURE: LINE IS: $l\n";
+      die "not a file: $p!!!\n"; 
+    }
+    if( $BORDER ) {
+      $bordered = $p;
+      $bhash = {};
+      $foo = $col."_";
+      $bordered =~ s,(.*/)?(.*),$rowdir/$foo$2,;
+      print "Bordering $p -> $bordered\n" if $VERBOSE;
+      if( ! -f $bordered && !$bhash{$bordered} ) {
+	$bhash{$bordered} = true;
+	$cmd = "$convert -border ".$BORDER."x".$BORDER." -bordercolor $BORDER_COLOR $p $bordered";
+	print $cmd."\n" if $VERBOSE;
+	`$cmd`;
+      }
+      $r .= $bordered." ";
+    }
+    else {
+	$r .= $p." ";
+    }
+    ++$col;
+    ++$width;
+  }
+  ++$ROWS;
+  push( @INLIST, $r );
+}
+$row = 0;
+
+$combine = "";
+@rowimages = ();
+foreach $r ( @INLIST ) {
+#  print $r."\n";
+    $ext = '.row_'.$row.$EXTO;
+    $out = $tmpdir.$INFILE.$ext;
+    push( @rowimages, $out );
+#  if ( -f $out ) { `rm -f $out `; }
+
+  $cmd = "$convert $append_l2r $r $out";
+  print "$0: building row $row...\n" unless $QUIET;
+  #print  "$cmd\n" if $VERBOSE;
+  $combine .= " $out";
+  `$cmd`;
+#  `rm -f $out`;
+  $row++;
+}
+$cmd = "$convert $append_t2b $combine $SHEET";
+#$cmd .= "&& rm ".$INFILE.".row_*".$EXTO;
+print "$0: combining rows...\n" unless $QUIET;
+print  "$cmd\n" if $VERBOSE;
+`$cmd`;
+if( ! $opt_d ) {
+  `rm -fr $borderdir`;
+}
+print "$0: generated [$SHEET]\n" unless $QUIET;
+
+END {
+    print "Cleaning up temp dir.\n" if $VERBOSE;
+    `rm -fr $tmpdir`;
+}

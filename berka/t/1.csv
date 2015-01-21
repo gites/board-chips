@@ -1,0 +1,15 @@
+# PRE=../
+# POST=.gif
+# PLUS={PRE}B33{POST}
+# MINUS={PRE}B44{POST}
+
+#w kazdej lini dajemy jeden zetonik :)
+#mozemy uzwac makr do konstruowania z poejdynczych elementow
+#makra mozemy sklepjac jak wyzej, penwie nie ma wiekszych ograniczej
+{PLUS},{PLUS},{PLUS},{PLUS}
+{MINUS},{MINUS},{MINUS},{MINUS}
+ 
+{PLUS},{PLUS},{PLUS},{PLUS}
+{MINUS},{MINUS},{MINUS},{MINUS}
+../B33.gif,../B34.gif,../B35.gif,../B36.gif
+
