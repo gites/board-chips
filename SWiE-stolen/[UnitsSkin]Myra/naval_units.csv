@@ -1,0 +1,15 @@
+#Naval units appearance description file;;;;;;;;;;;;;
+#Format: will be later ;;;;;;;;;;;;;
+Details;;;;;;;;;;;;;
+200;Zoom level;;;;;;;;;;;;
+0;0;0;0;Background Src;;;;;;;;;
+0;0;0;0;Background Dst;;;;;;;;;
+110;40;18;18;Can Attack Src;;;;;;;;;
+74;5;18;18;Can Attack Dst;;;;;;;;;
+110;60;18;18;Can Be Targeted Src;;;;;;;;;
+74;5;18;18;Can Be Targeted Dst;;;;;;;;;
+0;0;0;0;239;0;0;0;255;0;HP Bar Dst and Colors;;;
+-77;135;320;15;Verdana;16;20;0;0;0;0;0;0;Ship Name Text Dst and Font
+-77;120;320;15;Verdana;22;100;0;0;0;0;0;0;Fleet Name Text Dst and Font
+75;52;24;16;Flag Rect;;;;;;;;;
+24;32;125;94;Sprite Dst;;;;;;;;;

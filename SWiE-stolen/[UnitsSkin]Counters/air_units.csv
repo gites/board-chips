@@ -1,0 +1,111 @@
+#Air units appearance description file;;;;;;;;;;;;;
+#Format: will be later ;;;;;;;;;;;;;
+Details;;;;;;;;;;;;;
+300;Zoom level;;;;;;;;;;;;
+0;0;62;12;Background Src;;;;;;;;;
+52;114;62;12;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+10;20;10;10;AP Left Pack Src;;;;;;;;;
+84;94;22;22;AP Left Dst;;;;;;;;;
+0;20;10;10;Supply Pack Src;;;;;;;;;
+102;76;12;12;Supply Dst;;;;;;;;;
+20;20;10;10;Replacement Pack Src;;;;;;;;;
+54;99;12;12;Replacement Dst;;;;;;;;;
+107;100;20;24;Commander Src;;;;;;;;;
+50;55;20;24;Commander Dst;;;;;;;;;
+30;20;10;10;Attack Pack Src;;;;;;;;;
+102;99;12;12;Attack Dst;;;;;;;;;
+-58;120;280;15;Arial;12;20;255;255;0;10;10;10;Name Text Dst and Font
+87;95;16;20;Arial;16;80;255;255;255;10;10;10;AP Text Dst and Font
+64;95;16;20;Arial;16;80;255;255;255;10;10;10;Strength Text Dst and Font
+103;57;12;12;Flag Rect;;;;;;;;;
+19;30;128;100;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;; 
+Flags;;;;;;;;;;;;; 
+30;Zoom level;;;;;;;;;;;; 
+0;0;62;12;Background Src;;;;;;;;;
+52;114;62;12;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+0;0;10;10;AP Left Pack Src;;;;;;;;;
+0;0;22;22;AP Left Dst;;;;;;;;;
+0;0;10;10;Supply Pack Src;;;;;;;;;
+0;0;12;12;Supply Dst;;;;;;;;;
+0;0;10;10;Replacement Pack Src;;;;;;;;;
+0;0;12;12;Replacement Dst;;;;;;;;;
+0;0;0;0;Commander Src;;;;;;;;;
+0;0;12;12;Commander Dst;;;;;;;;;
+0;0;10;10;Attack Pack Src;;;;;;;;;
+0;0;12;12;Attack Dst;;;;;;;;;
+0;0;0;0;Arial;12;20;255;255;0;10;10;10;Name Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;AP Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;Strength Text Dst and Font
+0;0;0;0;Flag Rect;;;;;;;;; 
+19;30;192;150;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;; 
+Flags;;;;;;;;;;;;; 
+15;Zoom level;;;;;;;;;;;; 
+0;0;62;12;Background Src;;;;;;;;;
+52;114;62;12;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+0;0;10;10;AP Left Pack Src;;;;;;;;;
+0;0;22;22;AP Left Dst;;;;;;;;;
+0;0;10;10;Supply Pack Src;;;;;;;;;
+0;0;12;12;Supply Dst;;;;;;;;;
+0;0;10;10;Replacement Pack Src;;;;;;;;;
+0;0;12;12;Replacement Dst;;;;;;;;;
+0;0;0;0;Commander Src;;;;;;;;;
+0;0;12;12;Commander Dst;;;;;;;;;
+0;0;10;10;Attack Pack Src;;;;;;;;;
+0;0;12;12;Attack Dst;;;;;;;;;
+0;0;0;0;Arial;12;20;255;255;0;10;10;10;Name Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;AP Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;Strength Text Dst and Font
+0;0;0;0;Flag Rect;;;;;;;;; 
+-20;30;256;200;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;; 
+Flags;;;;;;;;;;;;; 
+10;Zoom level;;;;;;;;;;;; 
+0;0;62;12;Background Src;;;;;;;;;
+52;114;62;12;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+0;0;10;10;AP Left Pack Src;;;;;;;;;
+0;0;22;22;AP Left Dst;;;;;;;;;
+0;0;10;10;Supply Pack Src;;;;;;;;;
+0;0;12;12;Supply Dst;;;;;;;;;
+0;0;10;10;Replacement Pack Src;;;;;;;;;
+0;0;12;12;Replacement Dst;;;;;;;;;
+0;0;0;0;Commander Src;;;;;;;;;
+0;0;12;12;Commander Dst;;;;;;;;;
+0;0;10;10;Attack Pack Src;;;;;;;;;
+0;0;12;12;Attack Dst;;;;;;;;;
+0;0;0;0;Arial;12;20;255;255;0;10;10;10;Name Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;AP Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;Strength Text Dst and Font
+35;50;150;150;Flag Rect;;;;;;;;; 
+0;0;0;0;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;; 
+Flags;;;;;;;;;;;;; 
+5;Zoom level;;;;;;;;;;;; 
+0;0;62;12;Background Src;;;;;;;;;
+52;114;62;12;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+0;0;10;10;AP Left Pack Src;;;;;;;;;
+0;0;22;22;AP Left Dst;;;;;;;;;
+0;0;10;10;Supply Pack Src;;;;;;;;;
+0;0;12;12;Supply Dst;;;;;;;;;
+0;0;10;10;Replacement Pack Src;;;;;;;;;
+0;0;12;12;Replacement Dst;;;;;;;;;
+0;0;0;0;Commander Src;;;;;;;;;
+0;0;12;12;Commander Dst;;;;;;;;;
+0;0;10;10;Attack Pack Src;;;;;;;;;
+0;0;12;12;Attack Dst;;;;;;;;;
+0;0;0;0;Arial;12;20;255;255;0;10;10;10;Name Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;AP Text Dst and Font
+0;0;16;20;Arial;16;80;255;255;255;10;10;10;Strength Text Dst and Font
+35;50;180;180;Flag Rect;;;;;;;;; 
+0;0;0;0;Sprite Dst;;;;;;;;;

@@ -1,0 +1,82 @@
+#Land units appearance description file;;;;;;;;;;;;;
+#Format: will be later;;;;;;;;;;;;;
+1.03;Game version;;;;;;;;;;;;
+Details;;;;;;;;;;;;;
+200;Zoom level;;;;;;;;;;;;
+0;0;62;20;Background Src;;;;;;;;;
+52;110;54;20;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+0;0;0;0;Types Pack Src;;;;;;;;;
+0;0;0;0;Type Dst;;;;;;;;;
+0;0;0;0;AP Left Pack Src;;;;;;;;;
+0;0;0;0;AP Left Dst;;;;;;;;;
+0;0;0;0;Supply Pack Src;;;;;;;;;
+0;0;0;0;Supply Dst;;;;;;;;;
+0;0;0;0;Replacement Pack Src;;;;;;;;;
+0;0;0;0;Replacement Dst;;;;;;;;;
+117;28;11;10;Frozen Src;;;;;;;;;
+100;115;11;10;Frozen Dst;;;;;;;;;
+0;0;0;0;Commander Src;;;;;;;;;
+0;0;0;0;Commander Dst;;;;;;;;;
+0;0;0;0;Attack Pack Src;;;;;;;;;
+0;0;0;0;Attack Dst;;;;;;;;;
+-58;100;280;10;Arial;16;50;255;255;0;10;10;10;Name Text Dst and Font
+90;110;16;20;Impact;20;10;0;201;87;10;10;10;AP Text Dst and Font
+73;110;16;20;Impact;20;10;135;206;250;10;10;10;Strength Text Dst and Font
+55;114;18;12;Flag Rect;;;;;;;;;
+19;30;128;100;Sprite Dst;;;;;;;;;
+1;2;3;4;Exp bar src
+5;6;7;8;Exp bar dst
+#;;;;;;;;;;;;;
+Flag_and_general_info;;;;;;;;;;;;;
+45;Zoom level;;;;;;;;;;;;
+0;0;0;0;Background Src;;;;;;;;;
+0;0;0;0;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+0;0;0;0;Types Pack Src;;;;;;;;;
+0;0;0;0;Type Dst;;;;;;;;;
+0;0;0;0;AP Left Pack Src;;;;;;;;;
+0;0;0;0;AP Left Dst;;;;;;;;;
+0;0;0;0;Supply Pack Src;;;;;;;;;
+0;0;0;0;Supply Dst;;;;;;;;;
+0;0;0;0;Replacement Pack Src;;;;;;;;;
+0;0;0;0;Replacement Dst;;;;;;;;;
+0;0;0;0;Frozen Src;;;;;;;;;
+0;0;0;0;Frozen Dst;;;;;;;;;
+0;0;0;0;Commander Src;;;;;;;;;
+0;0;0;0;Commander Dst;;;;;;;;;
+0;0;0;0;Attack Pack Src;;;;;;;;;
+0;0;0;0;Attack Dst;;;;;;;;;
+0;0;0;0;Arial;16;50;255;255;0;10;10;10;Name Text Dst and Font
+0;0;0;0;Impact;20;10;0;201;87;10;10;10;AP Text Dst and Font
+0;0;0;0;Impact;20;10;135;206;250;10;10;10;Strength Text Dst and Font
+54;60;60;40;Flag Rect;;;;;;;;;
+0;0;0;0;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;;
+Flag_only;;;;;;;;;;;;;
+15;Zoom level;;;;;;;;;;;;
+0;0;0;0;Background Src;;;;;;;;;
+0;0;0;0;Background Dst;;;;;;;;;
+0;0;0;0;Levels Pack Src;;;;;;;;;
+0;0;0;0;Level Dst;;;;;;;;;
+0;0;0;0;Types Pack Src;;;;;;;;;
+0;0;0;0;Type Dst;;;;;;;;;
+0;0;0;0;AP Left Pack Src;;;;;;;;;
+0;0;0;0;AP Left Dst;;;;;;;;;
+0;0;0;0;Supply Pack Src;;;;;;;;;
+0;0;0;0;Supply Dst;;;;;;;;;
+0;0;0;0;Replacement Pack Src;;;;;;;;;
+0;0;0;0;Replacement Dst;;;;;;;;;
+0;0;0;0;Frozen Src;;;;;;;;;
+0;0;0;0;Frozen Dst;;;;;;;;;
+0;0;0;0;Commander Src;;;;;;;;;
+0;0;0;0;Commander Dst;;;;;;;;;
+0;0;0;0;Attack Pack Src;;;;;;;;;
+0;0;0;0;Attack Dst;;;;;;;;;
+0;0;0;0;Arial;16;50;255;255;0;10;10;10;Name Text Dst and Font
+0;0;0;0;Impact;20;10;0;201;87;10;10;10;AP Text Dst and Font
+0;0;0;0;Impact;20;10;135;206;250;10;10;10;Strength Text Dst and Font
+54;60;60;40;Flag Rect;;;;;;;;;
+0;0;0;0;Sprite Dst;;;;;;;;;

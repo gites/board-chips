@@ -1,0 +1,23 @@
+#Levels of depth of 16 types of sprites defined in game.;
+#Format description:;
+#First column: depth level from 0 (farest) to 39 (nearest);
+#Second column: sprite type description (don't edit!);
+#Tips: leave empty levels between for eyecandies (see also eyecandies.csv);
+0;Water
+2;Beach
+4;Plain
+6;Desert
+8;Swamp
+10;Hill
+12;Mountain
+16;River
+5;Rough
+14;Forest Plants
+31;Hex Highlight
+22;Hex Ownership Highlight
+24;Hex Grid
+26;City/Fortification
+28;Weather
+30;Unit
+32;Unit In Move
+23;Border lines

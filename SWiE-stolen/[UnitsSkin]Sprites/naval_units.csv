@@ -1,0 +1,66 @@
+#Naval units appearance description file;;;;;;;;;;;;;
+#Format: will be later ;;;;;;;;;;;;;
+1.03;Game version;;;;;;;;;;;;
+Details;;;;;;;;;;;;;
+200;Zoom level;;;;;;;;;;;;
+0;0;0;0;Background Src;;;;;;;;;
+0;0;0;0;Background Dst;;;;;;;;;
+110;40;0;0;Can Attack Src;;;;;;;;;
+74;5;0;0;Can Attack Dst;;;;;;;;;
+110;60;0;0;Can Be Targeted Src;;;;;;;;;
+74;5;0;0;Can Be Targeted Dst;;;;;;;;;
+114;0;0;0;Commander Src;;;;;;;;;
+74;35;0;0;Commander Dst;;;;;;;;;
+15;160;136;4;255;0;0;0;255;0;HP Bar Dst and Colors;;;
+-77;135;320;15;Fixedsys;16;20;205;173;0;10;10;10;Ship Name Text Dst and Font
+-77;120;320;15;Fixedsys;22;100;255;255;0;10;10;10;Fleet Name Text Dst and Font
+68;95;30;20;Flag Rect;;;;;;;;;
+0;10;166;130;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;;
+Medium;;;;;;;;;;;;;
+30;Zoom level;;;;;;;;;;;;
+0;0;0;0;Background Src;;;;;;;;;
+-83;-83;0;0;Background Dst;;;;;;;;;
+110;40;0;0;Can Attack Src;;;;;;;;;
+65;-73;0;0;Can Attack Dst;;;;;;;;;
+110;60;0;0;Can Be Targeted Src;;;;;;;;;
+65;-73;0;0;Can Be Targeted Dst;;;;;;;;;
+114;0;0;0;Commander Src;;;;;;;;;
+65;-13;0;0;Commander Dst;;;;;;;;;
+-53;237;272;8;255;0;0;0;255;0;HP Bar Dst and Colors;;;
+0;0;0;0;Fixedsys;32;20;205;173;0;10;10;10;Ship Name Text Dst and Font
+0;0;0;0;Fixedsys;40;100;255;255;0;10;10;10;Fleet Name Text Dst and Font
+53;107;60;40;Flag Rect;;;;;;;;;
+-83;-63;332;260;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;;
+Big;;;;;;;;;;;;;
+12;Zoom level;;;;;;;;;;;;
+0;0;0;0;Background Src;;;;;;;;;
+-249;-249;0;0;Background Dst;;;;;;;;;
+110;40;0;0;Can Attack Src;;;;;;;;;
+47;-229;0;0;Can Attack Dst;;;;;;;;;
+110;60;0;0;Can Be Targeted Src;;;;;;;;;
+47;-229;0;0;Can Be Targeted Dst;;;;;;;;;
+114;0;0;0;Commander Src;;;;;;;;;
+47;-109;0;0;Commander Dst;;;;;;;;;
+-189;391;544;16;255;0;0;0;255;0;HP Bar Dst and Colors;;;
+0;0;0;0;Fixedsys;64;20;205;173;0;10;10;10;Ship Name Text Dst and Font
+0;0;0;0;Fixedsys;88;100;255;255;0;10;10;10;Fleet Name Text Dst and Font
+23;131;120;80;Flag Rect;;;;;;;;;
+-249;-209;664;520;Sprite Dst;;;;;;;;;
+#;;;;;;;;;;;;;
+Huge;;;;;;;;;;;;;
+6;Zoom level;;;;;;;;;;;;
+0;0;0;0;Background Src;;;;;;;;;
+-581;-581;0;0;Background Dst;;;;;;;;;
+110;40;0;0;Can Attack Src;;;;;;;;;
+11;-541;0;0;Can Attack Dst;;;;;;;;;
+110;60;0;0;Can Be Targeted Src;;;;;;;;;
+11;-541;0;0;Can Be Targeted Dst;;;;;;;;;
+114;0;0;0;Commander Src;;;;;;;;;
+11;-301;0;0;Commander Dst;;;;;;;;;
+-461;699;1088;32;255;0;0;0;255;0;HP Bar Dst and Colors;;;
+0;0;0;0;Fixedsys;120;20;205;173;0;10;10;10;Ship Name Text Dst and Font
+0;0;0;0;Fixedsys;180;100;255;255;0;10;10;10;Fleet Name Text Dst and Font
+23;131;120;80;Flag Rect;;;;;;;;;
+-249;-209;664;520;Sprite Dst;;;;;;;;;
