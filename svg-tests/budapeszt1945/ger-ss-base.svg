@@ -14,7 +14,7 @@
    id="svg3821"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Nowy dokument 6">
+   sodipodi:docname="ger-ss-base.svg">
   <defs
      id="defs3823" />
   <sodipodi:namedview
@@ -24,16 +24,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="309.99213"
-     inkscape:cy="851.93955"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="449.43036"
+     inkscape:cy="908.17539"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1274"
      inkscape:window-height="897"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:window-x="114"
+     inkscape:window-y="126"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata3826">
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,7 +54,7 @@
     <g
        id="layer1-7-5"
        inkscape:label="Layer 1"
-       transform="matrix(1,0,0,1.0079431,1100.2811,-476.0932)"
+       transform="matrix(0.99930715,0,0,1.1565733,971.55178,-746.50662)"
        style="fill:#ffffff">
       <rect
          ry="0"
@@ -93,7 +93,7 @@
     <g
        id="layer1-7"
        inkscape:label="Layer 1"
-       transform="matrix(0.99117323,0,0,0.98978745,1096.8903,-459.13756)"
+       transform="matrix(0.99048656,0,0,1.1357405,968.16316,-727.05067)"
        style="fill:#000000">
       <rect
          ry="0"
@@ -132,13 +132,13 @@
     <rect
        style="fill:#000000"
        id="rect3293-5-7"
-       width="180.00002"
-       height="162.86768"
-       x="489.66779"
-       y="221.34491" />
+       width="179.87531"
+       height="186.884"
+       x="361.36127"
+       y="53.774891" />
     <path
        style="fill:#000000;fill-opacity:1"
-       d="m 370.99623,403.133 c -2.4898,-4.8325 -2.7089,-8.29094 -0.66982,-10.57306 0.80227,-0.8979 1.5733,-1.51792 1.7134,-1.37782 0.1401,0.1401 0.10245,3.15778 -0.0837,6.70595 -0.29277,5.5813 -0.42222,6.28856 -0.95991,5.24493 z"
+       d="m 242.77226,262.36966 c -2.48697,-5.54501 -2.70886,-9.5138 -0.66906,-12.13248 0.80327,-1.03195 1.57115,-1.74324 1.71202,-1.58149 0.14117,0.16215 0.10539,3.62415 -0.0696,7.69488 -0.28134,6.40414 -0.42251,7.21555 -0.95836,6.01831 z"
        id="path3304"
        inkscape:connector-curvature="0" />
   </g>
