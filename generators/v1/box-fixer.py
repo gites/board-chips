@@ -13,9 +13,9 @@ import sys
 from os import walk
 
 
-path = "C:\Users\m415065\Desktop\\board-chips\generators\\v1\\res\wb-95\gu"
+path = sys.argv[1]
 
-#exit("Do not use if you don't know what are you doing!")
+sys.exit("Do not use if you don't know what are you doing!")
 f = []
 for (dirpath, dirnames, filenames) in walk(path):
     f.extend(filenames)
@@ -39,15 +39,18 @@ for a in f:
             """
             # adding white border to black DIV_BOX
             # element.set("style","fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.30000001")
-        elif __id == "ATACK_BOX":
-            element.set("style", "fill:#b00000")
+        elif __id == "ATTACK_BOX":
+            # element.set("style", "fill:#b00000")
+            # element.set("id", "ATTACK_BOX")
             pass
         elif __id == "DEF_BOX":
-            element.set("style", "fill:#008000")
+            # element.set("style", "fill:#008000")
             pass
         elif __id == "MOVE_BOX":
-            element.set("style", "fill:#008080")
+            # element.set("style", "fill:#008080")
             pass
-
+        elif __id == "ATACK":
+            element.set("id", "ATTACK")
+            pass
     b = open(dirpath+"\\"+a, "w+")
     b.write(etree.tostring(svg, pretty_print=True))

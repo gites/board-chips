@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = '123'
-
+__version__ = 1
 # colorizer.py src.svg dst.svg
 # this script takes styles parameters from srv.svg file and sets them in dst.svg
 # script requires that src and dst file have grouped path witch id="ICON"
@@ -13,12 +13,12 @@ import sys
 
 if len(sys.argv) != 3:
     print "USAGE: %s source.svg target.svg" % sys.argv[0]
-    exit()
+    sys.exit()
 
 # temp overwriting cmd lines parameters
-path = 'C:\Users\m415065\Desktop\\board-chips\svg-tests\\rus\others\\art'
-sys.argv[1] = "rus-art-ml-20-152mm.svg"
-sys.argv[2] = "rus-gaz-55.svg"
+path = '.'
+#sys.argv[1] = "hun-piech.svg"
+#sys.argv[2] = "ger-opel-blitz.svg"
 
 
 try:
@@ -27,7 +27,7 @@ try:
     f.close()
 except IOError:
     # print "ERROR: No file %s " % (sys.argv[1])
-    exit("ERROR: No file %s " % (sys.argv[1]))
+    sys.exit("ERROR: No file %s " % (sys.argv[1]))
 
 try:
     with open(path + "\\" +sys.argv[2]) as f:
@@ -35,7 +35,7 @@ try:
     f.close()
 except IOError:
     # print "ERROR: No file %s " % (sys.argv[2])
-    exit("ERROR: No file %s " % (sys.argv[2]))
+    sys.exit("ERROR: No file %s " % (sys.argv[2]))
 
 src_style = []
 for element in src[3].iter():
@@ -70,4 +70,4 @@ try:
     print "INFO: Writen as %s" % __file
 except IOError:
     # print "ERROR: Unable to write file %s " % __file
-    exit("ERROR: Unable to write file %s " % __file)
+    sys.exit("ERROR: Unable to write file %s " % __file)
