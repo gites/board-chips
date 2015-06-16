@@ -15,11 +15,7 @@ if len(sys.argv) != 3:
     print "USAGE: %s source.svg target.svg" % sys.argv[0]
     sys.exit()
 
-# temp overwriting cmd lines parameters
 path = '.'
-#sys.argv[1] = "hun-piech.svg"
-#sys.argv[2] = "ger-opel-blitz.svg"
-
 
 try:
     with open(path + "\\" + sys.argv[1]) as f:

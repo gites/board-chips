@@ -1,9 +1,4 @@
-﻿
-
-
-
-
-Wymagania dla *nix'ów:
+﻿Wymagania dla *nix'ów:
 - python 2.7.x (https://www.python.org/downloads/)
 - modul lxml  (http://lxml.de/installation.html polecam: pip install lxml)
 - zainstalowany Inkscape (https://inkscape.org/en/)
@@ -34,6 +29,7 @@ UNIT NAME - nazwa jednostki. Wpisujemy ciąg znaków.
 	OGRANICZENIA!:
 	- dla sztabów max 12 znaków inaczej zaczynają wyjeżdżąć poza krawędź żetonu
 	- dla jednostek lądowych max 5 znaków (+ewentualnie kropka ".")
+UNIT NAM2 - druga linia nazwy jednostek. Działa tylko dla żetonow, które mają odpowiedni tag. W założeniu przeznaczona na nazwy radzieckich korpusów.
 ARMY-DIV - numer dywizji, armii dla jednostek lądowych, lub korpusu armii dla sztabów, do której przynależy żeton.
 	OGRANICZENIA!:
 	- max 3 cyfry/litery - może się trochę "rozjechać"
@@ -68,6 +64,7 @@ BACKGROUND - tło żetonu
 BORDER - ramka w okół żetonu oraz kolory napisów (nazwa, wielkość jednostki, współczynniki)
 DIV_BOX - kolor tła pod numerem dywizji/armii
 DIV_BOX_BORDER - kolor ramki tła pod pod  numerem dywizji/armii
+DIV_COLOR - określa kolor numery dywizji/armi. Można podać kod koloru zgodny z html(wtedy będzie dla wszystkich żetonów danego kraju), albo RNG i skrypt sam "wylosuje" kolory. Za każdym uruchomieniem mogą być inne kolory, więc jak się coś nie podoba, trzeba próbować do skutku. Skrypt rozróżnia dywizjie/armie po numerze, jeżeli jest "1DPanc" i "1DP" a zapiszemy ich nazwę jako "1" to dostaną ten sam kolor.
 ATTACK_BOX - kolor tła pod siłą ataku jednostki
 DEF_BOX - kolor tła pod siłą obrony jednostki
 MOVE_BOX - kolor tła pod ilością punktów ruchu jednostki
@@ -82,10 +79,10 @@ Generowanie żetonów:
 2. Przechodzimy do katalogu gdzie mamy ściągnięty generator.
 3. Wykonujemy polecenie:
 	gen4.exe wb95 example-wb95.csv colours.csv
-4. wygenerowane zetony znajduja sie w pliku gen4-counters-sheet-1.svg. Na jeden arkusz mieści się 108 dwustronnych żetonów. Jeżeli generujemny więcej, zostaną utworzone pliki .svg z kolejnymi numerami.
+4. wygenerowane zetony znajduja sie w pliku <nazewa CSV>-counters-sheet-1.svg. Na jeden arkusz mieści się 108 dwustronnych żetonów. Jeżeli generujemny więcej, zostaną utworzone pliki .svg z kolejnymi numerami.
 
 dla leniwych:
-można odpalić gen.bat 
+można odpalić gen-exmaple.bat (albo  gen-budapeszt1945.bat
 
 
 

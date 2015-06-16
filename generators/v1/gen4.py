@@ -8,12 +8,14 @@ import operator
 import sys
 from lxml import etree
 from copy import deepcopy
+from random import randint
 # ---------------------------------------------------------------------------
 class Color:
     # Class for setting counters and borders colors based on country codes
     # reads data from csv file added as third argument to script
     # sets everything in colours2
     colours2 = {}
+    div_colors = {}
 
     def __init__(self, __file):
         try:
@@ -25,6 +27,44 @@ class Color:
 
         for __line in __color_list:
             self.colours2[__line['COUNTRY']] = __line
+
+    def get_div(self, __num, __country):
+        if self.colours2[__country]['DIV_COLOR'] == 'RNG':
+            if __num in self.div_colors:
+                return self.div_colors[__num]
+            elif __country == 'RU':
+                a = randint(0, 255)
+                b = randint(0, 255)
+                c = randint(0, 255)
+            else:
+                a = randint(128, 255)
+                b = randint(128, 255)
+                c = randint(128, 255)
+
+            __str = "#%0.2X%0.2X%0.2X" % (a, b, c)
+            self.div_colors[__num] = __str
+            return self.div_colors[__num]
+        else:
+            return self.colours2[__country]['DIV_COLOR']
+
+    def filter(self, __d_color, __b_color):
+        __div_colors = self.hex_to_rgb(__d_color)
+        __box_colors = self.hex_to_rgb(__b_color)
+        a = operator.xor(__div_colors[0], __box_colors[0])
+        b = operator.xor(__div_colors[1], __box_colors[1])
+        c = operator.xor(__div_colors[2], __box_colors[2])
+        return self.rgb_to_hex((a, b, c))
+
+    # from http://stackoverflow.com/questions/214359/converting-hex-color-to-rgb-and-vice-versa
+    def hex_to_rgb(self, value):
+        # hex_to_rgb("#ffffff")             #==> (255, 255, 255)
+        value = value.lstrip('#')
+        lv = len(value)
+        return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
+    def rgb_to_hex(self, rgb):
+        # rgb_to_hex((255, 255, 255))       #==> '#ffffff'
+        return '#%02x%02x%02x' % rgb
 
 # ---------------------------------------------------------------------------
 class Counter:
@@ -96,6 +136,7 @@ class CounterWB95(Counter):
         else:
             self.warn("name", self.unitName, self.div)
             self.unitName = csvrow['UNIT NAME']
+        self.unitName2 = csvrow['UNIT NAME2']
         # army/div is optional
         self.div = csvrow['ARMY-DIV']
 
@@ -206,6 +247,8 @@ class CounterWB95(Counter):
             __id = element.get("id")
             if __id == 'ARMY':
                 element.text = self.div
+                # __color = color.filter(color.get_div(self.div, self.country), self.divBoxColor)
+                # element.set("style", "fill:"+__color)
             elif __id == 'NAME':
                 element.text = self.unitName
             elif __id == 'BACKGROUND':
@@ -226,10 +269,17 @@ class CounterWB95(Counter):
             __id = element.get("id")
             if __id == 'ARMY' or __id == 'DIV':
                 element.text = self.div
+                __color = color.filter(color.get_div(self.div, self.country), self.divBoxColor)
+                # TODO: xor z bg color ?
+                element.set("style", "fill:"+__color)
             elif __id == 'NAME':
                 element.text = self.unitName
-                __style = "font-size:8.75px;text-anchor: middle;font-family:sans-serif;" \
-                          "text-align:right;letter-spacing:0px;fill:"+self.borderColor+";fill-opacity:1;"
+                __style = "fill:"+self.borderColor+";fill-opacity:1"
+                element.set("style", __style)
+            elif __id == 'NAME2':
+                element.text = self.unitName2
+                __style = "fill:"+self.borderColor+";fill-opacity:1"
+                element.set("style", __style)
                 element.set("style", __style)
             elif __id == 'BACKGROUND':
                 __style = "fill:"+self.color+";fill-opacity:1;stroke:"+self.borderColor+";stroke-width:0.55318326"
@@ -253,6 +303,7 @@ class CounterWB95(Counter):
             elif __id == "DIV_BOX":
                 element.set("style", "fill:"+self.divBoxColor+";fill-opacity:1;stroke:" \
                             + self.divBoxBorderColor+";stroke-width:0.30000001")
+
         # back
 
         if self.backIcon == "":
@@ -263,10 +314,15 @@ class CounterWB95(Counter):
             __id = element.get("id")
             if __id == 'ARMY' or __id == 'DIV':
                 element.text = self.div
+                __color = color.filter(color.get_div(self.div, self.country), self.divBoxColor)
+                element.set("style", "fill:"+__color)
             elif __id == 'NAME':
                 element.text = self.unitName
-                __style = "font-size:8.75px;text-anchor: middle;font-family:sans-serif;" \
-                          "text-align:right;letter-spacing:0px;fill:"+self.borderColor+";fill-opacity:1;"
+                __style = "fill:"+self.borderColor+";fill-opacity:1"
+                element.set("style", __style)
+            elif __id == 'NAME2':
+                element.text = self.unitName2
+                __style = "fill:"+self.borderColor+";fill-opacity:1"
                 element.set("style", __style)
             elif __id == 'BACKGROUND':
                 __style = "fill:"+self.color+";fill-opacity:1;stroke:"+self.borderColor+";stroke-width:0.55318326"
