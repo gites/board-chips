@@ -15,7 +15,10 @@ if len(sys.argv) != 3:
     print "USAGE: %s source.svg target.svg" % sys.argv[0]
     sys.exit()
 
+
 path = '.'
+
+
 
 try:
     with open(path + "\\" + sys.argv[1]) as f:
@@ -34,12 +37,14 @@ except IOError:
     sys.exit("ERROR: No file %s " % (sys.argv[2]))
 
 src_style = []
+src_style2 = []
 for element in src[3].iter():
     __id = element.get("id")
     if __id == "ICON":
         for icon in element.iter():
             style = icon.get("style")
             src_style.append(style)
+            src_style2.append(style)
         break
         style = src_style.pop(0)
 
@@ -52,12 +57,19 @@ for element in dst[3].iter():
             if style:
                 print "Changing DST %s TO %s" % (style, src1)
                 icon.set("style", src1)
-        break
-
+        # break
+    elif __id == "ICON2":
+        for icon in element.iter():
+            style = icon.get("style")
+            src1 = src_style2.pop(0)
+            if style:
+                print "Changing DST %s TO %s" % (style, src1)
+                icon.set("style", src1)
+        # break
 a = sys.argv[1].split('.')
 b = sys.argv[2].split('.')
 
-__file = path+ "\\" +b[0]+'-from-'+a[0]+'-colorized.svg'
+__file = path+ "\\" + b[0]+'-from-'+a[0]+'-colorized.svg'
 
 try:
     with open(__file, 'w+') as f:

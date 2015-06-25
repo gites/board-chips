@@ -32,10 +32,6 @@ class Color:
         if self.colours2[__country]['DIV_COLOR'] == 'RNG':
             if __num in self.div_colors:
                 return self.div_colors[__num]
-            elif __country == 'RU':
-                a = randint(0, 255)
-                b = randint(0, 255)
-                c = randint(0, 255)
             else:
                 a = randint(128, 255)
                 b = randint(128, 255)
@@ -46,6 +42,21 @@ class Color:
             return self.div_colors[__num]
         else:
             return self.colours2[__country]['DIV_COLOR']
+
+    def get_hq(self, __num, __country):
+        if self.colours2[__country]['HQ_COLOR'] == 'RNG':
+            if __num in self.div_colors:
+                return self.div_colors[__num]
+            else:
+                a = randint(128, 255)
+                b = randint(128, 255)
+                c = randint(128, 255)
+
+            __str = "#%0.2X%0.2X%0.2X" % (a, b, c)
+            self.div_colors[__num] = __str
+            return self.div_colors[__num]
+        else:
+            return self.colours2[__country]['HQ_COLOR']
 
     def filter(self, __d_color, __b_color):
         __div_colors = self.hex_to_rgb(__d_color)
@@ -247,6 +258,12 @@ class CounterWB95(Counter):
             __id = element.get("id")
             if __id == 'ARMY':
                 element.text = self.div
+                # if self.country == 'RU':
+                if Color.colours2[self.country]['HQ_COLOR'] == 'RNG':
+                    __color = color.filter(color.get_hq(self.div, self.country), self.divBoxColor)
+                else:
+                    __color = color.get_hq(self.div, self.country)
+                element.set("style", "fill:"+__color)
                 # __color = color.filter(color.get_div(self.div, self.country), self.divBoxColor)
                 # element.set("style", "fill:"+__color)
             elif __id == 'NAME':
@@ -508,6 +525,8 @@ try:
     with open(sys.argv[2]) as csvfile:
         reader = csv.DictReader(csvfile)
         sortedlist = sorted(reader, key=operator.itemgetter('COUNTRY'), reverse=True)
+        #sortedlist.sort(key=operator.itemgetter('TYPE'), reverse=False)
+
 except IOError:
     sys.exit("ERROR: No file %s " % (sys.argv[2]))
 csv_line = 1
@@ -535,10 +554,11 @@ for i in xrange(0, len(svg)):
 sheets.append(page)
 
 game = sys.argv[2].split('.')
-
+print "Writing..."
 for i in xrange(0, len(sheets)):
     page = sheets[i].a4
     name = '%s-counters-sheet-%d.svg' % (game[0], i+1)
+    print name
     f = open(name, 'w+')
     f.write(etree.tostring(page, pretty_print=True))
     f.close()

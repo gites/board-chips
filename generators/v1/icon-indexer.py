@@ -31,7 +31,7 @@ class A4:
         :return: True on success, False on error. A4 page is stored as svg in self.a4
         """
         try:
-            with open('res\\a4.svg', 'r') as f:
+            with open('res\\a3.svg', 'r') as f:
                 self.a4 = etree.XML(f.read())
             f.close()
         except IOError:
@@ -55,7 +55,7 @@ class A4:
             self.y_end = 0
             self.xstep = 230
             self.ystep = 53
-            self.cpr = 3  # cpr = counters per row
+            self.cpr = 6  # cpr = counters per row
             self.cpc = 18  # cpc = counter per column
             self.max = self.cpr * self.cpc
         else:
@@ -74,7 +74,7 @@ class A4:
         else:
             __x = self.x_start + ((self.num % self.cpr) * self.xstep)
             __y = self.y_start + ((self.num / self.cpr) * self.ystep)
-            print __x, __y
+            # print __x, __y
             __trans = "translate(%f,%f)" % (__x, __y)
             __counter[0].set("transform", __trans)
             self.a4[3].append(deepcopy(__counter[0]))
@@ -112,10 +112,11 @@ else:
 
 f = []
 for (dirpath, dirnames, filenames) in walk(path):
-    # print dirpath, dirnames, filenames
+    #print dirpath, dirnames, filenames
     f.extend(filenames)
     break
 
+#sys.exit()
 sheets = []
 page = A4()
 page.create('INDEX')
@@ -130,15 +131,22 @@ for i in xrange(0, len(f)):
     else:
         sheets.append(page)
         page = A4()
-        page.create('WB95')
+        page.create('INDEX')
         page.add((svg[3], svg[3]), f[i])
         print "INFO: another page created"
 
 sheets.append(page)
 
+path2 = path.split('\\')
+path3 = path2.pop()
+
+if path3 == "":
+    path3 = path2.pop()
+
 for i in xrange(0, len(sheets)):
     page = sheets[i].a4
-    name = 'WB95-index-sheet-%d.svg' % (i+1)
+    name = 'WB95-index-sheet-%s-%d.svg' % (path3, i+1)
+    print "Writing: %s" % name
     f = open(name, 'w+')
     f.write(etree.tostring(page, pretty_print=True))
     f.close()

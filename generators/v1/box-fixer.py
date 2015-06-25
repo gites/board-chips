@@ -102,24 +102,25 @@ for a in f:
             pass
 
         elif __id == "ICON":
-            """
+            # """
             for icon in element.iter():
                 style = icon.get("style")
                 src1 = "fill:#ffffff"
                 if style:
                     print "Changing DST %s TO %s" % (style, src1)
                     icon.set("style", src1)
-            """
-			pass
+            # break
+            # """
         elif __id == "ICON2":
-            """
+            # """
             for icon in element.iter():
                 style = icon.get("style")
                 src1 = "fill:#ffffff"
                 if style:
                     print "Changing DST %s TO %s" % (style, src1)
                     icon.set("style", src1)
-            """
+            # break
+            # """
             pass
-    b = open(dirpath+"\\"+a, "w+")
+    b = open(dirpath+"\\white\\"+a, "w+")
     b.write(etree.tostring(svg, pretty_print=True))

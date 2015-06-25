@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.12"
-     inkscape:cx="-58.881403"
-     inkscape:cy="16.574064"
+     inkscape:zoom="10.24"
+     inkscape:cx="-12.478931"
+     inkscape:cy="18.858071"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -52,7 +52,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g3394">
+       id="g3378">
       <rect
          ry="0"
          y="0.2709488"
@@ -139,8 +139,8 @@
            id="MOVE"
            sodipodi:role="line">Y</tspan></text>
       <g
-         transform="matrix(0.11309322,0,0,0.1198873,-1.7044112,11.900707)"
-         id="g3506">
+         transform="matrix(-0.11306234,0,0,0.1198873,50.348885,12.779613)"
+         id="ICON">
         <path
            inkscape:connector-curvature="0"
            id="path3520"
