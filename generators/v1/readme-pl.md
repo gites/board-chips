@@ -30,7 +30,7 @@ Do ustawienia mamy następujące pola:
 	OGRANICZENIA!:
 	- dla sztabów max 12 znaków inaczej zaczynają wyjeżdżać poza krawędź żetonu
 	- dla jednostek lądowych max 5 znaków (+ewentualnie kropka ".")
-* UNIT NAM2 - druga linia nazwy jednostek. Działa tylko dla żetonów, które mają odpowiedni tag. W założeniu przeznaczona na nazwy radzieckich korpusów.
+* UNIT NAME2 - druga linia nazwy jednostek. Działa tylko dla żetonów, które mają odpowiedni tag. W założeniu przeznaczona na nazwy radzieckich korpusów.
 * ARMY-DIV - numer dywizji, armii dla jednostek lądowych, lub korpusu armii dla sztabów, do której przynależy żeton.
 	OGRANICZENIA!:
 	- max 3 cyfry/litery - może się trochę "rozjechać"
