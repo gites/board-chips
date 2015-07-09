@@ -1,6 +1,6 @@
 #Requirements for *nix’s
 - python 2.7.x (https://www.python.org/downloads/)
-- modul lxml  (http://lxml.de/installation.html) 
+- module lxml  (http://lxml.de/installation.html) 
 - Inkscape (https://inkscape.org/en/)
 
 **WARNING:** this project was developed under Windows (unfortunately :) ), and haven’t been tested on Linux. It can happen, that I mistakenly assumed something about path format and script will not work. Fixes welcome. 
@@ -8,7 +8,7 @@
 #Requirements for Windows
 - Microsoft Visual C++ 2008 Redistributable Package(http://www.microsoft.com/downloads/en/details.aspx?FamilyID=9b2da534-3e03-4391-8a4d-074b9f2bc1bf&displaylang=en)
 - Inkscape (https://inkscape.org/en/)
-- modul lxml  (http://lxml.de/installation.html)  (if you are using Python scripts, not exe)
+- module lxml  (http://lxml.de/installation.html)  (if you are using Python scripts, not exe)
 
 #How it works
 ##Definition of counters for WB-95
