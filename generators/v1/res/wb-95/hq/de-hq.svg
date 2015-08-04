@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.2407734"
-     inkscape:cx="26.436972"
+     inkscape:cx="-7.7444595"
      inkscape:cy="12.56903"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -183,7 +183,7 @@
        y="43.449608" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:11.68099976px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-weight:normal;font-size:11.68099999px;line-height:125%;font-family:'Microsoft Sans Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Microsoft Sans Serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
        x="2.2918806"
        y="36.319202"
        id="tag3113"
@@ -192,10 +192,10 @@
          id="ARMY"
          x="2.2918806"
          y="36.319202"
-         style="font-size:8.75771809px;fill:#ffffff">ARMY</tspan></text>
+         style="font-size:11.68099999px;fill:#ffffff;-inkscape-font-specification:'Microsoft Sans Serif, Normal';font-family:'Microsoft Sans Serif';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;">ARMY</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.22301865px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.22300018px;line-height:125%;font-family:'Microsoft Sans Serif';-inkscape-font-specification:'Microsoft Sans Serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;"
        x="27.899109"
        y="47.350464"
        id="123"
@@ -205,6 +205,6 @@
          id="NAME"
          x="27.899109"
          y="47.350464"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.22301865px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff">Commander</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.22300018px;line-height:125%;font-family:'Microsoft Sans Serif';-inkscape-font-specification:'Microsoft Sans Serif, Normal';text-align:center;writing-mode:lr;text-anchor:middle;fill:#ffffff;">Commander</tspan></text>
   </g>
 </svg>

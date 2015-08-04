@@ -15,7 +15,7 @@
    id="svg3388"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="bg-hq2.svg">
+   sodipodi:docname="bg-hq-stoychev.svg">
   <defs
      id="defs3390">
     <pattern
@@ -34,7 +34,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9999995"
-     inkscape:cx="27.912899"
+     inkscape:cx="-3.0246029"
      inkscape:cy="31.167325"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -80,7 +80,7 @@
        inkscape:transform-center-y="-1.25" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.71537495px;line-height:100%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.71537507px;line-height:100%;font-family:'Microsoft Sans Serif';-inkscape-font-specification:'Microsoft Sans Serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;"
        x="26.4653"
        y="50.185955"
        id="123"
@@ -172,7 +172,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:11.68138695px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-weight:normal;font-size:11.6813755px;line-height:125%;font-family:'Microsoft Sans Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'Microsoft Sans Serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
        x="6.42591"
        y="35.23333"
        id="text3388"
@@ -182,6 +182,6 @@
          id="ARMY"
          x="6.42591"
          y="35.23333"
-         style="font-size:11.68138695px;fill:#ffffff">ARMY</tspan></text>
+         style="font-size:11.6813755px;fill:#ffffff;-inkscape-font-specification:'Microsoft Sans Serif, Normal';font-family:'Microsoft Sans Serif';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;">ARMY</tspan></text>
   </g>
 </svg>
